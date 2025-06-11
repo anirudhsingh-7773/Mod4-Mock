@@ -1,0 +1,12 @@
+<?php
+
+/**
+ * @file
+ * Movie DB Theme theme file.
+ */
+
+function moviedb_theme_preprocess_views_view(&$variables) {
+  if ($variables['view']->id() == 'movies') {
+    $variables['#attached']['library'][] = 'moviedb_theme/movie-popup';
+  }
+}

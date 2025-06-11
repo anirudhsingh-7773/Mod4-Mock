@@ -1,0 +1,9 @@
+{#
+  Custom template for displaying date field as day and month separately
+#}
+
+{% set day = row._entity.field_release_date.value|date('j') %}
+{% set month = row._entity.field_release_date.value|date('F') %}
+
+<span class="date-day">{{ day }}</span>
+<span class="date-month">{{ month|upper }}</span>

@@ -1,0 +1,25 @@
+uuid: 1d36be4b-7f40-42fa-918d-f6ff2e8fd77a
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - moviedb_theme
+_core:
+  default_config_hash: bg5bYfpeaXmx8_tSm9f5BipcuRMFTSJk99VOAKy0MOo
+id: moviedb_theme_branding
+theme: moviedb_theme
+region: nav_branding
+weight: -6
+provider: null
+plugin: system_branding_block
+settings:
+  id: system_branding_block
+  label: 'Site branding'
+  label_display: '0'
+  provider: system
+  use_site_logo: true
+  use_site_name: true
+  use_site_slogan: false
+visibility: {  }
