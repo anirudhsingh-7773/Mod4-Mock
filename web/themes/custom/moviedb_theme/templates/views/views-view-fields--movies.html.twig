@@ -1,0 +1,40 @@
+{#
+  Template for a single row in the Movies view.
+  Fields available:
+  - fields.field_image.content
+  - fields.title.content
+  - fields.field_release_date.content
+  - fields.body.content (optional)
+#}
+
+<div class="movie-card js-movie-card"
+     data-title="{{ fields.title.content|striptags }}"
+     data-image="{{ fields.field_image.content|striptags }}"
+     data-date="{{ fields.field_release_date.content|striptags }}"
+     data-description="{{ fields.body.content|striptags }}">
+  
+  <div class="movie-card__image">
+    {{ fields.field_image.content }}
+  </div>
+
+  <div class="movie-card__content">
+    <h3 class="movie-card__title">
+      {{ fields.title.content }}
+    </h3>
+  
+    <div class="movie-card__date">
+      {{ fields.field_release_date.content }}
+    </div>
+  </div>
+</div>
+
+<div class="movie-modal js-movie-modal" style="display: none;">
+  <div class="movie-modal__overlay js-modal-close"></div>
+  <div class="movie-modal__content">
+    <button class="movie-modal__close js-modal-close">X</button>
+    <img class="movie-modal__image" src="" alt="Movie image">
+    <h2 class="movie-modal__title"></h2>
+    <p class="movie-modal__date"></p>
+    <p class="movie-modal__description"></p>
+  </div>
+</div>

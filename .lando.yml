@@ -1,4 +1,20 @@
-name: mod4-mock
+name: movie-db
 recipe: drupal10
 config:
   webroot: web
+
+services:
+  node:
+    type: node:20
+
+tooling:
+  npm:
+    service: node
+  node:
+    service: node
+  gulp:
+    service: node
+    cmd: npm exec gulp
+  gulpwatch:
+    service: node
+    cmd: npm exec gulp watch

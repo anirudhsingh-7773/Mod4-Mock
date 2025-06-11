@@ -1,0 +1,22 @@
+uuid: 50861007-1f19-49ed-924a-bebccfcfe587
+langcode: en
+status: true
+dependencies:
+  theme:
+    - moviedb_theme
+_core:
+  default_config_hash: FBTFXG5O_C1ZHnxr_beHD5H7Li44ZnjWUppXPbN-GqM
+id: moviedb_theme_local_tasks
+theme: moviedb_theme
+region: content
+weight: -3
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  label_display: '0'
+  provider: core
+  primary: true
+  secondary: true
+visibility: {  }
