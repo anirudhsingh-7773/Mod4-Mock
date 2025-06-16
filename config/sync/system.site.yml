@@ -1,8 +1,8 @@
 _core:
   default_config_hash: ijfbzDTN4CbE7Sr-6ubWzy_t1vH4OtU1doNCLssVz-4
 langcode: en
-uuid: d59d3394-f3c3-47a0-93f3-795c71eae00d
-name: 'Module 4 Mock'
+uuid: 5cd76538-71a6-446f-9d69-da862881a813
+name: 'Movie DB'
 mail: anirudh.singh.7773@gmail.com
 slogan: ''
 page:
