@@ -1,0 +1,22 @@
+uuid: 6b9d86f3-0374-4e4c-8639-2e403ee9df0c
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - moviedb_theme
+_core:
+  default_config_hash: vgSaDJRpNeeh-KqJEPtRX6gP2sAzt1kBL4_nDQKP-Os
+id: moviedb_theme_help
+theme: moviedb_theme
+region: content
+weight: -3
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

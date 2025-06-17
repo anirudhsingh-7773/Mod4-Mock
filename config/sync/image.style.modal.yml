@@ -1,0 +1,15 @@
+uuid: bf33dc33-d14b-4129-b46f-61c6db449c76
+langcode: en
+status: true
+dependencies: {  }
+name: modal
+label: 'Modal (600x300)'
+effects:
+  2fe9478b-a850-47c0-b42f-3ac68e16d0f3:
+    uuid: 2fe9478b-a850-47c0-b42f-3ac68e16d0f3
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 600
+      height: 300
+      anchor: center-center

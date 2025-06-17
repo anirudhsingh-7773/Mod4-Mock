@@ -1,0 +1,22 @@
+uuid: c90ac031-cf46-420f-9c07-dc15cee77e64
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - moviedb_theme
+_core:
+  default_config_hash: NIhdw07MI7NRsDz65eBtiY48vOqQpBW3hfucfBMnd4w
+id: moviedb_theme_messages
+theme: moviedb_theme
+region: content
+weight: -7
+provider: null
+plugin: system_messages_block
+settings:
+  id: system_messages_block
+  label: Messages
+  label_display: '0'
+  provider: system
+visibility: {  }
