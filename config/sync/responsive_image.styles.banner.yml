@@ -1,0 +1,75 @@
+uuid: 53f0b947-7ac9-4b36-b9f9-f014c565ce3c
+langcode: en
+status: true
+dependencies:
+  config:
+    - image.style.banner_lg
+    - image.style.banner_md
+    - image.style.banner_sm
+  theme:
+    - moviedb_theme
+id: banner
+label: 'Responsive Banner'
+image_style_mappings:
+  -
+    image_mapping_type: image_style
+    image_mapping: banner_lg
+    breakpoint_id: moviedb_theme.screen.xxl-min
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: banner_lg
+    breakpoint_id: moviedb_theme.screen.xxl-min
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: banner_lg
+    breakpoint_id: moviedb_theme.screen.xl-min
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: banner_lg
+    breakpoint_id: moviedb_theme.screen.xl-min
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: banner_lg
+    breakpoint_id: moviedb_theme.screen.lg-min
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: banner_lg
+    breakpoint_id: moviedb_theme.screen.lg-min
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: banner_md
+    breakpoint_id: moviedb_theme.screen.md-min
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: banner_md
+    breakpoint_id: moviedb_theme.screen.md-min
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: banner_md
+    breakpoint_id: moviedb_theme.screen.sm-min
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: banner_md
+    breakpoint_id: moviedb_theme.screen.sm-min
+    multiplier: 2x
+  -
+    image_mapping_type: image_style
+    image_mapping: banner_sm
+    breakpoint_id: moviedb_theme.screen.xs-max
+    multiplier: 1x
+  -
+    image_mapping_type: image_style
+    image_mapping: banner_sm
+    breakpoint_id: moviedb_theme.screen.xs-max
+    multiplier: 2x
+breakpoint_group: moviedb_theme.screen
+fallback_image_style: banner_lg

@@ -1,0 +1,21 @@
+@use '../theme/variables' as *;
+
+body {
+  font-family: $base-font, $fallback-font;
+}
+
+html {
+  font-size: $font-lg;
+}
+
+@media (max-width: $breakpoint-lg) {
+  html {
+    font-size: $font-md;
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  html {
+    font-size: $font-sm;
+  }
+}

@@ -1,0 +1,15 @@
+uuid: a3e7d2fc-d509-49fc-8f4f-b0e342a781e7
+langcode: en
+status: true
+dependencies: {  }
+name: banner_sm
+label: 'Banner Small (576x323)'
+effects:
+  33f86ea9-871e-4e43-b759-4918751d17dd:
+    uuid: 33f86ea9-871e-4e43-b759-4918751d17dd
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 576
+      height: 323
+      anchor: center-center

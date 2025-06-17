@@ -1,0 +1,15 @@
+uuid: b3a6cc6f-9646-4d08-b7aa-1089011136a5
+langcode: en
+status: true
+dependencies: {  }
+name: banner_md
+label: 'Banner Medium (992x557)'
+effects:
+  89523b8c-9001-4dbf-ac62-c77624101652:
+    uuid: 89523b8c-9001-4dbf-ac62-c77624101652
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 992
+      height: 557
+      anchor: center-center

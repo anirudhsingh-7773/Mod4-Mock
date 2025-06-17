@@ -1,0 +1,125 @@
+@use '../theme/variables' as *;
+
+.movie-modal {
+  &__content {
+    color: $brand-secondary;
+    padding-bottom: 2rem;
+
+    &::after {
+      content: '';
+      background: linear-gradient(90deg, transparent 0%, $bg-accent 60%, $bg-accent 100%);
+      position: absolute;
+      inset: 0;
+    }
+  }
+
+  &__title {
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
+
+  &__bg {
+    position: absolute;
+    height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+  }
+
+  &__header {
+    position: relative;
+    z-index: 2;
+    width: 40%;
+    border: none;
+    margin-left: auto;
+    display: block;
+  }
+
+  &__body {
+    width: 40%;
+    margin-left: auto;
+    z-index: 2;
+  }
+
+  &__close {
+    z-index: 2;
+    position: absolute;
+    right: -1rem;
+    top: -1rem;
+    font-size: 1.5rem;
+  }
+
+  &__details {
+    color: $brand-primary;
+    font-weight: 500;
+  }
+
+  &__date {
+    margin-bottom: 0;
+  }
+
+  &__genres {
+    text-transform: uppercase;
+  }
+
+  &__description {
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  &__link {
+    margin: 0;
+    border-radius: 0;
+    border-width: .25rem;
+    padding: 0.5rem 2rem;
+    font-weight: 500;
+
+    i {
+      padding-right: 1rem;
+    }
+  }
+
+  &__actions {
+    position: absolute;
+    z-index: 2;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    left: 0.5rem;
+
+    li a {
+      color: $brand-secondary;
+      padding: 0.5rem;
+      opacity: 0.5;
+    }
+  }
+}
+
+.modal-dialog {
+  max-width: 45rem;
+  width: 90%;
+  margin: 0 auto;
+}
+
+@media (max-width: $breakpoint-xs) {
+
+  .movie-modal {
+    &__content {
+
+      &::after {
+        background: linear-gradient(90deg, transparent 0%, $bg-accent 50%, $bg-accent 100%);
+      }
+    }
+
+    &__header,
+    &__body {
+      width: 50%;
+    }
+
+    &__title {
+      font-size: 1.5rem;
+    }
+  }
+  .modal-dialog {
+    max-width: 36rem;
+  }
+}

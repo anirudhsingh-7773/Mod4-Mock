@@ -1,0 +1,29 @@
+uuid: 28c9f3a5-911b-41f9-955b-ac8c67799eb0
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.movie_banner
+  module:
+    - system
+    - views
+  theme:
+    - moviedb_theme
+id: moviedb_theme_views_block__movie_banner_block_1
+theme: moviedb_theme
+region: header
+weight: 0
+provider: null
+plugin: 'views_block:movie_banner-block_1'
+settings:
+  id: 'views_block:movie_banner-block_1'
+  label: ''
+  label_display: '0'
+  provider: views
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /movies
