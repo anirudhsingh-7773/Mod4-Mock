@@ -1,0 +1,34 @@
+{#
+ * Custom layout: 1st row: 3 items, 2nd row: 2 items, 3rd row: 4 items
+#}
+
+{{ attach_library('moviedb_theme/movies-page') }}
+
+{% if title %}
+  <h3>{{ title }}</h3>
+{% endif %}
+
+{% set layout = [3, 2, 4] %}
+{% set row_index = 0 %}
+{% set item_index = 0 %}
+
+<div class="container">
+  {% for row in rows %}
+  {% if item_index == 0 %}
+    {% set columns = layout[row_index] %}
+    <div class="row row-{{ row_index + 1 }}">
+  {% endif %}
+    
+    <div class="movie-card-wrapper col col-12 col-md-{{ 12 // columns }} mb-4">
+      {{ row.content }}
+    </div>
+
+  {% set item_index = item_index + 1 %}
+
+  {% if item_index == layout[row_index] %}
+    </div> {# Close row #}
+    {% set item_index = 0 %}
+    {% set row_index = row_index + 1 %}
+  {% endif %}
+  {% endfor %}
+</div>

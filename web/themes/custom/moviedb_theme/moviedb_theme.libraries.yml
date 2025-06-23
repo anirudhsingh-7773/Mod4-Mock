@@ -2,6 +2,12 @@ global-styling:
   css:
     theme:
       css/main.css: {}
+  dependencies:
+    - moviedb_theme/fontawesome_cdn
+
+fontawesome_cdn:
+  js:
+    https://kit.fontawesome.com/f425d58dc8.js: { type: external }
 
 slick-cdn:
   css:
@@ -9,23 +15,17 @@ slick-cdn:
       https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css: { type: external }
       https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css: { type: external }
   js:
-    https://code.jquery.com/jquery-3.6.0.min.js: { type: external, minified: true }
     https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js: { type: external, minified: true }
-    https://kit.fontawesome.com/f425d58dc8.js: { type: external }
+
+banner:
+  js:
     js/banner.js: { type: file, scope: footer }
-  dependencies:
-    - core/jquery
-    - core/drupal
-    - core/once
+  dependencies: 
+    - moviedb_theme/slick-cdn
 
-movie-modal:
-  js:
-    js/modal.js: {}
+movies-page:
+  css:
+    theme:
+      css/movies.css: {}
   dependencies:
-    - core/jquery
-    - core/drupal
-    - core/once
-
-fontawesome_cdn:
-  js:
-    https://kit.fontawesome.com/f425d58dc8.js: { type: external }
+    - moviedb_theme/banner

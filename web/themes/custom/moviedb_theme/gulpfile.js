@@ -11,7 +11,7 @@ const paths = {
 };
 
 function compileSass() {
-  return gulp.src('./scss/main.scss')
+  return gulp.src('./scss/**/*.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(postcss([autoprefixer()]))
     .pipe(cleanCSS())

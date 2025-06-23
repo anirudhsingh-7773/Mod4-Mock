@@ -1,78 +1,72 @@
-uuid: 632d5de5-4a9b-4c37-bebb-049be077fb96
+uuid: 6544f3df-6283-4aab-8fe7-0df86de73cdf
 langcode: en
 status: true
 dependencies:
   config:
+    - core.entity_view_mode.node.modal
     - field.field.node.movie.field_description
     - field.field.node.movie.field_genre
     - field.field.node.movie.field_image
     - field.field.node.movie.field_premiere
     - field.field.node.movie.field_release_date
     - field.field.node.movie.field_sub_genre
-    - image.style.wide
+    - image.style.card
     - node.type.movie
   module:
     - datetime
     - image
-    - options
     - user
-id: node.movie.default
+id: node.movie.modal
 targetEntityType: node
 bundle: movie
-mode: default
+mode: modal
 content:
   field_description:
     type: basic_string
-    label: above
+    label: hidden
     settings: {  }
     third_party_settings: {  }
-    weight: 101
+    weight: 2
     region: content
   field_genre:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
-    weight: 104
+    weight: 4
     region: content
   field_image:
     type: image
     label: hidden
     settings:
       image_link: ''
-      image_style: wide
+      image_style: card
       image_loading:
         attribute: eager
     third_party_settings: {  }
-    weight: -1
-    region: content
-  field_premiere:
-    type: list_default
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    weight: 103
+    weight: 0
     region: content
   field_release_date:
     type: datetime_plain
-    label: above
+    label: hidden
     settings:
       timezone_override: Asia/Kolkata
     third_party_settings: {  }
-    weight: 102
+    weight: 3
     region: content
   field_sub_genre:
     type: entity_reference_label
-    label: above
+    label: hidden
     settings:
-      link: true
+      link: false
     third_party_settings: {  }
-    weight: 105
+    weight: 5
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 1
     region: content
-hidden: {  }
+hidden:
+  field_premiere: true

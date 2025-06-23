@@ -1,22 +1,22 @@
-uuid: 28c9f3a5-911b-41f9-955b-ac8c67799eb0
+uuid: b815e58a-f150-4e3a-b0e9-ecb5509d53eb
 langcode: en
 status: true
 dependencies:
   config:
-    - views.view.movie_banner
+    - views.view.movies
   module:
     - system
     - views
   theme:
     - moviedb_theme
-id: moviedb_theme_views_block__movie_banner_block_1
+id: moviedb_theme_views_block__movies_block_1
 theme: moviedb_theme
-region: header
+region: hero
 weight: 0
 provider: null
-plugin: 'views_block:movie_banner-block_1'
+plugin: 'views_block:movies-block_1'
 settings:
-  id: 'views_block:movie_banner-block_1'
+  id: 'views_block:movies-block_1'
   label: ''
   label_display: '0'
   provider: views

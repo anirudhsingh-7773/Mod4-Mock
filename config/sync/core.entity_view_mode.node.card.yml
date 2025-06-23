@@ -1,0 +1,11 @@
+uuid: c509b5c9-d785-4824-8280-9b28f97ddbef
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.card
+label: Card
+description: 'Display content as a card'
+targetEntityType: node
+cache: true

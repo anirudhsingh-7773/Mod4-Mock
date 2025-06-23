@@ -1,0 +1,49 @@
+{%
+set classes = [
+  'node',
+  'node--type-' ~ node.bundle|clean_class,
+  node.isPromoted() ? 'node--promoted',
+  node.isSticky() ? 'node--sticky',
+  not node.isPublished() ? 'node--unpublished',
+  view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  'movie-card',
+  'js-movie-card',
+]
+%}
+
+{% set nid = node.id() %}
+{% set release_date = node.field_release_date.value %}
+
+<article{{ attributes.addClass(classes) }}
+         data-bs-toggle="modal"
+         data-bs-target="#movieModal-{{ nid }}">
+  <div class="movie-card__image">
+    {{ content.field_image }}
+  </div>
+
+  <div {{ content_attributes.addClass('node__content', 'movie-card__content' ) }}>
+    <h3 class="movie-card__title">{{ label }}</h3>
+
+    <div class="movie-card__date">
+      <div class="movie-card__day">{{ release_date|date("d") }}</div>
+      <div class="movie-card__month">{{ release_date|date("F")|title }}</div>
+    </div>
+
+    <div class="movie-card__premiere">
+      {{ content.field_premiere }}
+    </div>
+
+    <div class="movie-card__time">
+      {{ release_date|date('gA') }}
+    </div>
+  </div>
+</article>
+
+{# Modal content rendered using Twig Tweak #}
+<div class="modal fade movie-modal" id="movieModal-{{ nid }}" tabindex="-1" aria-labelledby="movieModalLabel-{{ nid }}" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content movie-modal__content">
+      {{ drupal_entity('node', nid, 'modal') }}
+    </div>
+  </div>
+</div>

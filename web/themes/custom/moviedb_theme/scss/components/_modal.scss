@@ -1,13 +1,13 @@
-@use '../theme/variables' as *;
+@use '../theme' as *;
 
 .movie-modal {
   &__content {
     color: $brand-secondary;
-    padding-bottom: 2rem;
+    padding-bottom: 2 * $padding-lg;
 
     &::after {
       content: '';
-      background: linear-gradient(90deg, transparent 0%, $bg-accent 60%, $bg-accent 100%);
+      @include gradient-overlay(transparent, $bg-accent, 60%);
       position: absolute;
       inset: 0;
     }
@@ -26,25 +26,17 @@
   }
 
   &__header {
-    position: relative;
-    z-index: 2;
-    width: 40%;
+    @include modal-section(40%);
     border: none;
-    margin-left: auto;
-    display: block;
   }
 
   &__body {
-    width: 40%;
-    margin-left: auto;
-    z-index: 2;
+    @include modal-section(40%);
   }
 
   &__close {
     z-index: 2;
-    position: absolute;
-    right: -1rem;
-    top: -1rem;
+    @include position-absolute(-$spacing-lg, -$spacing-lg);
     font-size: 1.5rem;
   }
 
@@ -59,6 +51,10 @@
 
   &__genres {
     text-transform: uppercase;
+
+    >div {
+      display: inline;
+    }
   }
 
   &__description {
@@ -67,28 +63,23 @@
   }
 
   &__link {
-    margin: 0;
-    border-radius: 0;
-    border-width: .25rem;
-    padding: 0.5rem 2rem;
-    font-weight: 500;
+    @include button-link;
 
     i {
-      padding-right: 1rem;
+      padding-right: $padding-lg;
     }
   }
 
   &__actions {
-    position: absolute;
     z-index: 2;
     margin: 0;
     padding: 0;
     display: flex;
-    left: 0.5rem;
+    @include position-absolute(null, null, null, $spacing-md);
 
     li a {
       color: $brand-secondary;
-      padding: 0.5rem;
+      padding: $padding-md;
       opacity: 0.5;
     }
   }
@@ -106,19 +97,20 @@
     &__content {
 
       &::after {
-        background: linear-gradient(90deg, transparent 0%, $bg-accent 50%, $bg-accent 100%);
+        @include gradient-overlay(transparent, $bg-accent, 50%);
       }
     }
 
     &__header,
     &__body {
-      width: 50%;
+      @include modal-section(50%);
     }
 
     &__title {
       font-size: 1.5rem;
     }
   }
+
   .modal-dialog {
     max-width: 36rem;
   }

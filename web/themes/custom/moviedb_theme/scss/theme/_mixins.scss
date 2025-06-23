@@ -1,0 +1,74 @@
+@use './variables' as *;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin image-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@mixin visually-hidden {
+  display: none !important;
+}
+
+@mixin text-shadow-accent($shadow-color) {
+  text-shadow: 0.25rem 0.25rem 0.5rem $shadow-color;
+}
+
+@mixin overlay-bg($color, $opacity: 0.5) {
+  content: '';
+  @include position-absolute(0, 0, 0, 0);
+  background: $color;
+  opacity: $opacity;
+  z-index: 2;
+}
+
+// Set an element to position: absolute with optional offsets
+@mixin position-absolute($top: null, $right: null, $bottom: null, $left: null) {
+  position: absolute;
+  @if $top != null { top: $top; }
+  @if $right != null { right: $right; }
+  @if $bottom != null { bottom: $bottom; }
+  @if $left != null { left: $left; }
+}
+
+// Reusable overlay effect on hover or background
+@mixin overlay-hover($color: $brand-primary, $opacity: 0.5) {
+  position: absolute;
+  @include position-absolute(0, 0, 0, 0);
+  background-color: $color;
+  opacity: $opacity;
+  z-index: 2;
+  cursor: pointer;
+}
+
+// Create a gradient effect
+@mixin gradient-overlay($from: transparent, $to: $bg-accent, $mid: 60%) {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, $from 0%, $to $mid, $to 100%);
+}
+
+// Modal contents width
+@mixin modal-section($width) {
+  width: $width;
+  margin-left: auto;
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+
+// Create a button
+@mixin button-link($radius: 0, $border: 0.25rem, $padding: 0.5rem 2rem) {
+  margin: 0;
+  border-radius: $radius;
+  border-width: $border;
+  padding: $padding;
+  font-weight: 500;
+}
