@@ -12,7 +12,6 @@ set classes = [
 %}
 
 {% set nid = node.id() %}
-{% set release_date = node.field_release_date.value %}
 
 <article{{ attributes.addClass(classes) }}
          data-bs-toggle="modal"
@@ -34,7 +33,7 @@ set classes = [
     </div>
 
     <div class="movie-card__time">
-      {{ release_date|date('gA') }}
+      {{ content.field_release_date }}
     </div>
   </div>
 </article>

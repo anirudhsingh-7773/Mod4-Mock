@@ -41,10 +41,11 @@ content:
     weight: 2
     region: content
   field_release_date:
-    type: datetime_plain
+    type: datetime_custom
     label: hidden
     settings:
-      timezone_override: UTC
+      timezone_override: Asia/Kolkata
+      date_format: gA
     third_party_settings: {  }
     weight: 1
     region: content
