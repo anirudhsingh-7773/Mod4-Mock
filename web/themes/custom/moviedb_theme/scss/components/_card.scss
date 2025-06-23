@@ -1,0 +1,101 @@
+@use '../theme' as *;
+
+.movie-card-wrapper {
+  height: 14rem;
+}
+
+.movie-card {
+  position: relative;
+  height: 100%;
+  background: $brand-secondary;
+  overflow: hidden;
+
+  &__image {
+    height: 100%;
+  }
+
+  .field--name-field-image {
+    height: 100%;
+    width: 100%;
+  }
+
+  &__image img {
+    @include image-cover;
+  }
+
+  &__date {
+    text-align: center;
+    display: none;
+    @include position-absolute($spacing-lg, $spacing-lg);
+    z-index: 3;
+
+    &::after {
+      content: "";
+      height: 3px;
+      width: 50%;
+      @include position-absolute(null, null, -$spacing-md, 50%);
+      background: $brand-secondary;
+      transform: translate(-50%, 0);
+      z-index: 5;
+      border-radius: 1rem;
+    }
+  }
+
+  &__day {
+    font-size: 6rem;
+    text-align: center;
+    line-height: 1;
+  }
+
+  &__month {
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+  }
+
+  &__time {
+    display: none;
+    @include position-absolute(2 * $spacing-lg , null, null, $spacing-lg);
+    font-weight: 500;
+    z-index: 3;
+  }
+
+  &__premiere {
+    @extend .movie-card__time;
+    @include position-absolute($spacing-lg, null, null, $spacing-lg);
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    @include position-absolute(null, null, $spacing-lg, $spacing-lg);
+    z-index: 3;
+    font-size: 1rem;
+    text-transform: uppercase;
+  }
+
+  &__content {
+    @include position-absolute(0, 0, 0, 0);
+    color: $brand-secondary;
+    padding: 3 * $padding-sm;
+    z-index: 1;
+    cursor: pointer;
+
+    // Hover effect on card
+    &:hover {
+
+      .movie-card__date,
+      .movie-card__premiere,
+      .movie-card__time {
+        display: block;
+      }
+
+      &::after {
+        content: '';
+        @include overlay-hover;
+      }
+    }
+  }
+}

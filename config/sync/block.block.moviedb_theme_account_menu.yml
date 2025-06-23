@@ -1,0 +1,27 @@
+uuid: aabcd6c1-79a0-46d1-9130-0fb0c394ce45
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.account
+  module:
+    - system
+  theme:
+    - moviedb_theme
+_core:
+  default_config_hash: XsD3CCYsobGJVPWN8-8JsZRGxMgxWhSEFDh2xDSLK9g
+id: moviedb_theme_account_menu
+theme: moviedb_theme
+region: nav_additional
+weight: -7
+provider: null
+plugin: 'system_menu_block:account'
+settings:
+  id: 'system_menu_block:account'
+  label: 'User account menu'
+  label_display: '0'
+  provider: system
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

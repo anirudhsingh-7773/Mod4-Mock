@@ -1,0 +1,33 @@
+uuid: b1e962bc-3dc8-4f79-88e6-24943aa43488
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - options
+id: node.field_premiere
+field_name: field_premiere
+entity_type: node
+type: list_string
+settings:
+  allowed_values:
+    -
+      value: gala_theatre
+      label: 'Gala Theatre'
+    -
+      value: pvr
+      label: PVR
+    -
+      value: inox
+      label: INOX
+    -
+      value: cinepolis
+      label: Cinepolis
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

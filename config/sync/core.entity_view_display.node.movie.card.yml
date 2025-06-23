@@ -1,0 +1,55 @@
+uuid: 97c288f1-77cc-4844-acd6-aeafb4c1eba0
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.card
+    - field.field.node.movie.field_description
+    - field.field.node.movie.field_genre
+    - field.field.node.movie.field_image
+    - field.field.node.movie.field_premiere
+    - field.field.node.movie.field_release_date
+    - field.field.node.movie.field_sub_genre
+    - image.style.card
+    - node.type.movie
+  module:
+    - datetime
+    - image
+    - options
+    - user
+id: node.movie.card
+targetEntityType: node
+bundle: movie
+mode: card
+content:
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: card
+      image_loading:
+        attribute: eager
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_premiere:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_release_date:
+    type: datetime_plain
+    label: hidden
+    settings:
+      timezone_override: UTC
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden:
+  field_description: true
+  field_genre: true
+  field_sub_genre: true
+  links: true

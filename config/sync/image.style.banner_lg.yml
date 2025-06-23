@@ -1,0 +1,15 @@
+uuid: 01eb1f2d-e52f-480d-918f-49543d3b74d1
+langcode: en
+status: true
+dependencies: {  }
+name: banner_lg
+label: 'Banner Large (1400x787)'
+effects:
+  b41378c1-e9ee-45c1-8e30-e043da472d9f:
+    uuid: b41378c1-e9ee-45c1-8e30-e043da472d9f
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1400
+      height: 787
+      anchor: center-center

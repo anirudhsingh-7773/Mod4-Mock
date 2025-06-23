@@ -1,0 +1,31 @@
+global-styling:
+  css:
+    theme:
+      css/main.css: {}
+  dependencies:
+    - moviedb_theme/fontawesome_cdn
+
+fontawesome_cdn:
+  js:
+    https://kit.fontawesome.com/f425d58dc8.js: { type: external }
+
+slick-cdn:
+  css:
+    theme:
+      https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css: { type: external }
+      https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css: { type: external }
+  js:
+    https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js: { type: external, minified: true }
+
+banner:
+  js:
+    js/banner.js: { type: file, scope: footer }
+  dependencies: 
+    - moviedb_theme/slick-cdn
+
+movies-page:
+  css:
+    theme:
+      css/movies.css: {}
+  dependencies:
+    - moviedb_theme/banner

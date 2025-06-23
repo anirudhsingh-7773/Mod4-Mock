@@ -1,0 +1,46 @@
+{#
+  Template for modal view mode of movie node.
+#}
+
+{% set release_date = node.field_release_date.value %}
+
+<div class="modal-header movie-modal__header">
+  <h2 class="modal-title movie-modal__title" id="movieModalLabel">
+    {{ label }}
+  </h2>
+  <div class="movie-modal__details">
+    <span class="movie-modal__date">
+      ({{ release_date|date("Y") }})
+    </span>
+    <span class="movie-modal__genres">
+      {{ content.field_genre }}, {{ content.field_sub_genre }}
+    </span>
+  </div>
+</div>
+
+<div class="modal-body movie-modal__body">
+  <p class="movie-modal__description">
+    {{ content.field_description|render|striptags|truncate(150, true, '...') }}
+  </p>
+  <a href="{{ url }}" class="movie-modal__link js-movie-link btn btn-outline-light" target="_blank" title="cta button"><i
+      class="fa-solid fa-play"></i> {{ "Watch Trailer"|t() }}</a>
+</div>
+
+<ul class="movie-modal__actions">
+  <li><a href="{{ url }}" class="js-movie-link btn" title="cta button">
+      <i class="fa-solid fa-heart"></i>
+    </a></li>
+  <li><a href="{{ url }}" class="js-movie-link btn" title="cta button">
+      <i class="fa-solid fa-comment"></i>
+    </a></li>
+  <li><a href="{{ url }}" class="js-movie-link btn" title="cta button">
+      <i class="fa-solid fa-share"></i>
+    </a></li>
+</ul>
+
+<img class="movie-modal__bg js-movie-modal-bg img-fluid" src="{{ file_url(node.field_image.entity.fileuri) }}" alt="Movie Background" width="900" height="450"
+  title="modal bg image">
+
+{# Button to close modal #}
+<button type="button" class="btn-close btn-close-white movie-modal__close js-modal-close" data-bs-dismiss="modal"
+  aria-label="Close"></button>

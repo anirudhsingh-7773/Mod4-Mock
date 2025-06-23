@@ -1,0 +1,117 @@
+@use '../theme' as *;
+
+.movie-modal {
+  &__content {
+    color: $brand-secondary;
+    padding-bottom: 2 * $padding-lg;
+
+    &::after {
+      content: '';
+      @include gradient-overlay(transparent, $bg-accent, 60%);
+      position: absolute;
+      inset: 0;
+    }
+  }
+
+  &__title {
+    font-size: 2rem;
+    text-transform: uppercase;
+  }
+
+  &__bg {
+    position: absolute;
+    height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+  }
+
+  &__header {
+    @include modal-section(40%);
+    border: none;
+  }
+
+  &__body {
+    @include modal-section(40%);
+  }
+
+  &__close {
+    z-index: 2;
+    @include position-absolute(-$spacing-lg, -$spacing-lg);
+    font-size: 1.5rem;
+  }
+
+  &__details {
+    color: $brand-primary;
+    font-weight: 500;
+  }
+
+  &__date {
+    margin-bottom: 0;
+  }
+
+  &__genres {
+    text-transform: uppercase;
+
+    >div {
+      display: inline;
+    }
+  }
+
+  &__description {
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  &__link {
+    @include button-link;
+
+    i {
+      padding-right: $padding-lg;
+    }
+  }
+
+  &__actions {
+    z-index: 2;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    @include position-absolute(null, null, null, $spacing-md);
+
+    li a {
+      color: $brand-secondary;
+      padding: $padding-md;
+      opacity: 0.5;
+    }
+  }
+}
+
+.modal-dialog {
+  max-width: 45rem;
+  width: 90%;
+  margin: 0 auto;
+}
+
+@media (max-width: $breakpoint-xs) {
+
+  .movie-modal {
+    &__content {
+
+      &::after {
+        @include gradient-overlay(transparent, $bg-accent, 50%);
+      }
+    }
+
+    &__header,
+    &__body {
+      @include modal-section(50%);
+    }
+
+    &__title {
+      font-size: 1.5rem;
+    }
+  }
+
+  .modal-dialog {
+    max-width: 36rem;
+  }
+}
